@@ -1,7 +1,13 @@
 from pathlib import Path
 import pylexibank
+from clldutils.misc import slug
 
 SUPPLEMENT = "http://www.pnas.org/content/suppl/2016/11/10/1613666113.DCSupplemental/pnas.1613666113.st01.docx"
+
+# TODO: Once https://github.com/concepticon/concepticon-data/pull/702 is merged:
+# 1. update metadata.json to show list "Haynie-2016-9".
+# 2. remove ./etc/concepts.csv
+# 3. revise concept loading below
 
 class Dataset(pylexibank.Dataset):
     dir = Path(__file__).parent
@@ -16,23 +22,37 @@ class Dataset(pylexibank.Dataset):
     )
 
     def cmd_download(self, args):
-        # Note this downloads the raw data, but we're using a hand-edited version,
-        # so make this a no-op.
+        # Note this downloads the raw data:
         # self.raw_dir.download(SUPPLEMENT, "pnas.1613666113.st01.docx")
+        # ... but we're using a hand-edited version, so make this a no-op.
         pass
     
     def cmd_makecldf(self, args):
         args.writer.add_sources()
         languages = args.writer.add_languages(lookup_factory="Name")
         
-        # TODO concepts
+        
+        # concepts = args.writer.add_concepts(
+        #     id_factory=lambda c: c.id.split("-")[-1] + "_" + slug(c.english),
+        #     lookup_factory="Name"
+        # )
+        concepts = {}
+        for i, concept in enumerate(self.concepts, 1):
+            cid = "%d_%s" % (i, slug(concept['Gloss']))
+            args.writer.add_concept(
+                ID=cid,
+                Name=concept['Gloss'],
+                Concepticon_ID=concept['Concepticon_ID'],
+                Concepticon_Gloss=concept['Concepticon_Gloss']
+            )
+            concepts[concept['Gloss']] = cid
         
         for row in self.raw_dir.read_csv("pnas.1613666113.st01.txt", dicts=True, delimiter="\t"):
             lang = row.pop("")
-            for concept in row:
+            for col in row:
                 lex = args.writer.add_forms_from_value(
                     Language_ID=languages[lang],
-                    Parameter_ID=concept,
-                    Value=row[concept],
+                    Parameter_ID=concepts[col],
+                    Value=row[col],
                     Source=['Haynie2016'],
                 )
