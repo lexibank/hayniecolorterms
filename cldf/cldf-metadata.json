@@ -8,11 +8,13 @@
     "dc:related": null,
     "dc:source": "sources.bib",
     "dc:title": "Phylogenetic approach to the evolution of color term systems",
+    "dcat:accessURL": "https://github.com/lexibank/hayniecolorterms",
     "prov:wasDerivedFrom": [
         {
             "rdf:type": "prov:Entity",
             "dc:title": "Repository",
-            "dc:created": "300ec80"
+            "rdf:about": "https://github.com/lexibank/hayniecolorterms",
+            "dc:created": "6ef3385"
         },
         {
             "rdf:type": "prov:Entity",
