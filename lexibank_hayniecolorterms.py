@@ -4,10 +4,6 @@ from clldutils.misc import slug
 
 SUPPLEMENT = "http://www.pnas.org/content/suppl/2016/11/10/1613666113.DCSupplemental/pnas.1613666113.st01.docx"
 
-# TODO: Once https://github.com/concepticon/concepticon-data/pull/702 is merged:
-# 1. update metadata.json to show list "Haynie-2016-9".
-# 2. remove ./etc/concepts.csv
-# 3. revise concept loading below
 
 class Dataset(pylexibank.Dataset):
     dir = Path(__file__).parent
@@ -31,11 +27,10 @@ class Dataset(pylexibank.Dataset):
         args.writer.add_sources()
         languages = args.writer.add_languages(lookup_factory="Name")
         
-        # concepts = args.writer.add_concepts(
-        #     id_factory=lambda c: c.id.split("-")[-1] + "_" + slug(c.english),
-        #     lookup_factory="Name"
-        # )
-        concepts = {}
+        concepts = args.writer.add_concepts(
+            id_factory=lambda c: c.id.split("-")[-1] + "_" + slug(c.english),
+            lookup_factory="Name"
+        )
         for i, concept in enumerate(self.concepts, 1):
             cid = "%d_%s" % (i, slug(concept['Gloss']))
             args.writer.add_concept(

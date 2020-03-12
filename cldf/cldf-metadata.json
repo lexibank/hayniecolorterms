@@ -3,6 +3,9 @@
     "aboutUrl": null,
     "dc:bibliographicCitation": "Haynie, H. J., & Bowern, C. (2016). Phylogenetic approach to the evolution of color term systems. Proceedings of the National Academy of Sciences, 113(48), 13666\u201313671. doi:10.1073/pnas.1613666113",
     "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#Wordlist",
+    "dc:format": [
+        "http://concepticon.clld.org/contributions/Haynie-2016-9"
+    ],
     "dc:identifier": "https://zenodo.org/record/1003137",
     "dc:isVersionOf": null,
     "dc:license": "CC",
@@ -15,19 +18,19 @@
             "rdf:type": "prov:Entity",
             "dc:title": "Repository",
             "rdf:about": "https://github.com/lexibank/hayniecolorterms",
-            "dc:created": "8da3f79"
+            "dc:created": "4479605"
         },
         {
             "rdf:type": "prov:Entity",
             "dc:title": "Glottolog",
             "rdf:about": "https://github.com/glottolog/glottolog",
-            "dc:created": "v4.0"
+            "dc:created": "v4.1"
         },
         {
             "rdf:type": "prov:Entity",
             "dc:title": "Concepticon",
             "rdf:about": "https://github.com/concepticon/concepticon-data",
-            "dc:created": "v2.2.0-4-gaadba44"
+            "dc:created": "v2.3.0"
         },
         {
             "rdf:type": "prov:Entity",

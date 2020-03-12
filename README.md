@@ -8,6 +8,9 @@ This dataset is licensed under a CC license
 
 Available online at https://zenodo.org/record/1003137
 
+
+Conceptlists in Concepticon:
+- [Haynie-2016-9](https://concepticon.clld.org/contributions/Haynie-2016-9)
 ## Statistics
 
 
@@ -21,3 +24,11 @@ Available online at https://zenodo.org/record/1003137
 - **Lexemes:** 962
 - **Sources:** 1
 - **Synonymy:** 1.07
+
+# Contributors
+
+Name | GitHub user | Role
+--- | --- | ---
+ | @ | maintainer
+
+
