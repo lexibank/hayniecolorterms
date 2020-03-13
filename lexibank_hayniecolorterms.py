@@ -31,16 +31,6 @@ class Dataset(pylexibank.Dataset):
             id_factory=lambda c: c.id.split("-")[-1] + "_" + slug(c.english),
             lookup_factory="Name"
         )
-        for i, concept in enumerate(self.concepts, 1):
-            cid = "%d_%s" % (i, slug(concept['Gloss']))
-            args.writer.add_concept(
-                ID=cid,
-                Name=concept['Gloss'],
-                Concepticon_ID=concept['Concepticon_ID'],
-                Concepticon_Gloss=concept['Concepticon_Gloss']
-            )
-            concepts[concept['Gloss']] = cid
-        
         for row in self.raw_dir.read_csv("pnas.1613666113.st01.txt", dicts=True, delimiter="\t"):
             lang = row.pop("")
             for col in row:

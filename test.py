@@ -21,6 +21,3 @@ def test_forms(cldf_dataset):
     assert len(forms) == 2
     assert set([f["Form"] for f in forms]) == set(["waru", "warru"])
 
-
-def test_cognates(cldf_dataset):
-    assert len(list(cldf_dataset["CognateTable"])) == 0  # no cognates
