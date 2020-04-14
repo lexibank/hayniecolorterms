@@ -1,4 +1,4 @@
-# Phylogenetic approach to the evolution of color term systems
+# CLDF dataset derived from Haynie and Bowern's "Phylogenetic approach to the evolution of color term systems" from 2016.
 
 Cite the source dataset as
 
@@ -27,8 +27,8 @@ Conceptlists in Concepticon:
 
 # Contributors
 
-Name | GitHub user | Role
---- | --- | ---
- | @ | maintainer
+Name               | GitHub user  | Description                          | Role
+---                | ---          | ---                                  | ---
+Simon J. Greenhill | @SimonGreenhill | patron                            | Author
 
 
