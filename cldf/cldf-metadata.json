@@ -11,14 +11,14 @@
     "dc:license": "CC",
     "dc:related": null,
     "dc:source": "sources.bib",
-    "dc:title": "CLDF dataset derived from Haynie and Bowern's \"Phylogenetic approach to the evolution of color term systems\" from 2016.",
+    "dc:title": "CLDF dataset derived from Haynie and Bowern's \"Phylogenetic approach to the evolution of color term systems\" from 2016",
     "dcat:accessURL": "https://github.com/lexibank/hayniecolorterms",
     "prov:wasDerivedFrom": [
         {
             "rdf:type": "prov:Entity",
             "dc:title": "Repository",
             "rdf:about": "https://github.com/lexibank/hayniecolorterms",
-            "dc:created": "5bd800d"
+            "dc:created": "a7f1af3"
         },
         {
             "rdf:type": "prov:Entity",

@@ -1,4 +1,4 @@
-# CLDF dataset derived from Haynie and Bowern's "Phylogenetic approach to the evolution of color term systems" from 2016.
+# CLDF dataset derived from Haynie and Bowern's "Phylogenetic approach to the evolution of color term systems" from 2016
 
 Cite the source dataset as
 
